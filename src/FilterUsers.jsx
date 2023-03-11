@@ -5,6 +5,7 @@ export const FilterUsers = () => {
   const [filter, setFilter] = useState("");
   return (
     <div>
+    <form action="">
       <input
         type="search"
         name=""
@@ -15,14 +16,17 @@ export const FilterUsers = () => {
           setFilter(e.target.value);
         }}
       />
+      </form>
       <ul>
-        <form >
+       
           {userData
-            .filter((user) => (user.name).toLowerCase().includes(filter.toLowerCase()))
+            .filter((user) =>
+              user.name.toLowerCase().includes(filter.toLowerCase())
+            )
             .map((user) => (
               <li key={user.id}>{user.name}</li>
             ))}
-        </form>
+       
       </ul>
     </div>
   );
